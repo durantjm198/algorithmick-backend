@@ -1,4 +1,2 @@
-from flask import Flask, request, jsonify
-import json
-from trees import Trees
+from flask import Flask
 application = Flask(__name__)
