@@ -1,3 +1,6 @@
+import sys
+sys.stdout = open('output.logs', 'w')
+
 print("i'm in the file")
 from flask import Flask, request, jsonify
 import json
