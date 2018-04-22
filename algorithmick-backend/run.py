@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 import json
 import trees
-from algorithmick-backend import application
 
-@application.route("/")
+application = Flask(__name__)
+
+@application.route('/')
 def hello():
   return "<h1>KENDRICK DESERVED THE GRAMMY</hi>"
 
