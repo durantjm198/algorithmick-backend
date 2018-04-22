@@ -1,1 +1,1 @@
-web: gunicorn algorithmick-backend:app
+web: gunicorn app:app
