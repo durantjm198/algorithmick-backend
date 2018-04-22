@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
 import json
 from trees import Trees
-from app import app
+from app import application
 
-@app.route("/")
+@application.route("/")
 def hello():
   return "<h1>KENDRICK DESERVED THE GRAMMY</hi>"
 
-@app.route("/trees/traversal", methods=['POST'])
+@application.route("/trees/traversal", methods=['POST'])
 def traversal():
   data = request.get_json()
   order = data.get('traversal')
