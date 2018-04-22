@@ -13,3 +13,5 @@ def traversal():
   order = data.get('traversal')
   tree = data.get('tree')
   return json.loads(Trees.traversal(tree, order))
+
+app.run(debug=True)
