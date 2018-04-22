@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import json
-import trees
+import .trees
 
 application = Flask(__name__)
 
