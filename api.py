@@ -3,6 +3,10 @@ import json
 from trees import Trees
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+  return "<h1>KENDRICK DESERVED THE GRAMMY</hi>"
+
 @app.route("/trees/traversal", methods=['POST'])
 def traversal():
   data = request.get_json()

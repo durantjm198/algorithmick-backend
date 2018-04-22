@@ -1,0 +1,1 @@
+from algorithmick-backend import app as application
