@@ -1,13 +1,12 @@
 import sys
-sys.stdout = open('output.logs', 'w')
 
-print("i'm in the file")
+print("i'm in the file", file=sys.stderr)
 from flask import Flask, request, jsonify
 import json
-print("imported some shit")
+print("imported some shit", file=sys.stderr)
 from trees import Trees
 app = Flask(__name__)
-print("made thee app")
+print("made thee app", file=sys.stderr)
 
 @app.route("/")
 def hello():
@@ -19,5 +18,5 @@ def traversal():
   order = data.get('traversal')
   tree = data.get('tree')
   return json.loads(Trees.traversal(tree, order))
-print("functions weren't sus")
+print("functions weren't sus", file=sys.stderr)
 app.run(debug=True)
