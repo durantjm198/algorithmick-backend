@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 from trees import Trees
-from app import application
+from .app import application
 
 @application.route("/")
 def hello():
