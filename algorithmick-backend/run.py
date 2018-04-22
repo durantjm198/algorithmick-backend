@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import json
-from trees import Trees
+import trees
 from algorithmick-backend import application
 
 @application.route("/")
