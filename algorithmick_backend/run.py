@@ -13,6 +13,4 @@ def traversal():
   data = request.form
   order = data.get('traversal')
   tree = data.get('tree').split(', ')
-  print('tree: ' + tree)
-  print('order: ' + order)
   return json.dumps(binary_tree_traversal(tree, order))
