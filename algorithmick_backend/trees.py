@@ -19,11 +19,11 @@ class Trees:
  def traversal(self, tree, order='preOrder'):
     result = {}
     if order == 'preOrder':
-      result['result'] = True
+      result["result"] = True
       steps = []
       for i in tree:
         steps.append({"node",i})
-      result['steps'] = steps
+      result["steps"] = steps
     
  #   if order == 'inOrder'
   #      result['results'] = true
