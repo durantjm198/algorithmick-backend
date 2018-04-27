@@ -19,7 +19,7 @@ def hello():
 def traversal():
   data = request.form
   order = data.get('traversal')
-  tree = data.get('tree').split(', ')
+  tree = map(int, data.get('tree').split(', '))
   return json.dumps(binary_tree_traversal(tree, order))
 
   
