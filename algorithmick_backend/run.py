@@ -11,7 +11,6 @@ def hello():
 @application.route("/trees/traversal", methods=['POST'])
 def traversal():
   data = request.form
-  print(request.form)
   order = data.get('traversal')
   tree = data.get('tree')
-  return json.loads(Trees.traversal(tree, order))
+  return json.loads(str(Trees.traversal(tree, order)))
