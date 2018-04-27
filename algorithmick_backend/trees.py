@@ -24,6 +24,7 @@ class Trees:
       for i in tree:
         steps.append({"node",i})
       result["steps"] = steps
+    print(str(result))
     
  #   if order == 'inOrder'
   #      result['results'] = true
