@@ -13,4 +13,4 @@ def traversal():
   data = request.form
   order = data.get('traversal')
   tree = data.get('tree')
-  return json.loads(str(Trees.traversal(tree, order)))
+  return json.dumps(Trees.traversal(tree, order))
