@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import json
-from .trees import Trees
+from .trees import binary_tree_traversal
 
 application = Flask(__name__)
 
@@ -15,4 +15,4 @@ def traversal():
   tree = data.get('tree')
   print('tree: ' + tree)
   print('order: ' + order)
-  return json.dumps(Trees.traversal(tree, order))
+  return json.dumps(binary_tree_traversal(tree, order))
