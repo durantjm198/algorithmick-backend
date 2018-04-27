@@ -50,4 +50,4 @@ class Trees:
     #}
     # where each number is the node's index in the input array as you view
     # it in the traversal
-    return json.loads(result)
+    return result
