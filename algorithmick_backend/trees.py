@@ -16,7 +16,7 @@ class Trees:
 #    steps.append({"node" : root})
 #    return steps
     
- def traversal(self, tree, order):
+ def traversal(self, tree, order='preOrder'):
     result = {}
     if order == 'preOrder':
       result['result'] = True
