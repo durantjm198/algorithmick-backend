@@ -23,6 +23,7 @@ def binary_tree_traversal(tree, order='preOrder'):
     for i in tree:
       steps.append({"node": i})
     result["steps"] = steps
+    result["array"] = tree
   print(str(result))
   
 #   if order == 'inOrder'
