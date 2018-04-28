@@ -1,11 +1,11 @@
 import json
 
 def inOrderHelper(tree, root, steps):
-  if len(tree) >= 2 * root + 1:
+  if len(tree) > 2 * root + 1:
     if tree[2 * root + 1] != None:
       inOrderHelper(tree, root * 2, steps)
   steps.append({'node': root})
-  if len(tree) >= 2 * root + 2:
+  if len(tree) > 2 * root + 2:
     if tree[2 * root + 2] != None:
       inOrderHelper(tree, 2 * root + 1, steps)
 
