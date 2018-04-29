@@ -1,10 +1,10 @@
 import json
 
 def inOrderHelper(tree, root, steps):
-  if len(tree) >= 2 * root:
+  if tree[root * 2 + 1] != None:
     inOrderHelper(tree, root * 2 + 1, steps)
   steps.append({'node': root})
-  if len(tree) >= 2 * root + 1:
+  if tree[root * 2 + 2] != None:
     inOrderHelper(tree, 2 * root + 2, steps)
 
 def binary_tree_traversal(tree, order='preOrder'):
