@@ -4,6 +4,12 @@ from .trees import binary_tree_traversal
 
 application = Flask(__name__)
 
+def string_to_int(s):
+  try:
+    return int(s)
+  except ValueError:
+    return None
+
 @application.after_request
 def after_request(response):
   response.headers.add('Access-Control-Allow-Origin', '*')
@@ -19,7 +25,5 @@ def hello():
 def traversal():
   data = request.form
   order = data.get('traversal')
-  tree = [int(s) for s in data.get('tree').split(',')]
+  tree = map(string_to_int, data.get('tree').split(','))
   return json.dumps(binary_tree_traversal(tree, order))
-
-  

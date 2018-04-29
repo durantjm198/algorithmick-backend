@@ -3,7 +3,8 @@ import json
 def inOrderHelper(tree, root, steps):
   if len(tree) > root * 2 + 1:
     inOrderHelper(tree, root * 2 + 1, steps)
-  steps.append({'node': root})
+  if tree[root] != None:
+    steps.append({'node': root})
   if len(tree) > root * 2 + 2:
     inOrderHelper(tree, 2 * root + 2, steps)
 
