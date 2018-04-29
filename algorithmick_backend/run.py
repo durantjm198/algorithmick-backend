@@ -23,7 +23,7 @@ def hello():
 
 @application.route("/trees/traversal", methods=['POST'])
 def traversal():
-  data = request.form
-  order = data.get('traversal')
-  tree = list(map(string_to_int, data.get('tree').split(',')))
+  data = request.get_json
+  order = data['traversal']
+  tree = list(map(string_to_int, data['tree']))
   return json.dumps(binary_tree_traversal(tree, order))
