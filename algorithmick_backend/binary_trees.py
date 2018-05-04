@@ -13,10 +13,12 @@ def is_binary_search_tree(tree):
     
     if tree[rt] == None:
       step['result'] = "true"
+      response["steps"].append(step)
       return True
 
     if tree[left(rt)] > tree[rt] or tree[right(rt)] < tree[rt]:
       step["result"] = 'false'
+      response["steps"].append(step)
       return False
     
     response["steps"].append(step)
