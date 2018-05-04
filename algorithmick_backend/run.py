@@ -29,7 +29,7 @@ def traversal_endpt():
   tree = list(map(string_to_int, data['tree']))
   return json.dumps(binary_tree_traversal(tree, order))
 
-@application.route("/binary_trees/is_bst", methods=['POST'])
+@application.route("/binary_trees/is_binary_search_tree", methods=['POST'])
 def is_bst_endpt():
   data = request.get_json()
   tree = list(map(string_to_int, data['tree']))
