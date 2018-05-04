@@ -25,6 +25,7 @@ def is_binary_search_tree(tree):
 
   response["array"] = tree
   response["result"] = is_bst_util(0, float('-inf'), float('inf'))
+  return response
 
 def binary_tree_traversal(tree, order='preOrder'):
   def preOrderHelper(tree, rt, steps):
