@@ -11,7 +11,7 @@ def is_binary_search_tree(tree):
   def is_bst_util(rt, mini, maxi):
     step = {'node' : rt}
     
-    if len(tree) < rt or tree[rt] == None:
+    if len(tree) <= rt or tree[rt] == None:
       step['result'] = "true"
       response["steps"].append(step)
       return True
