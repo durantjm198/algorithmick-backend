@@ -9,6 +9,7 @@ def right(n):
 def is_binary_search_tree(tree):
   response = {"steps": []}
   def is_bst_util(rt, mini, maxi):
+    print("running on " + str(rt))
     step = {'node' : rt}
     
     if len(tree) <= rt or tree[rt] == None:
