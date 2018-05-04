@@ -17,10 +17,19 @@ def is_binary_search_tree(tree):
       response["steps"].append(step)
       return True
 
-    if tree[left(rt)] > tree[rt] or tree[right(rt)] < tree[rt]:
-      step["result"] = 'false'
+    if len(tree) > left(rt):
+      test = True
+      if tree[left(rt)] > tree[rt]:
+        step["result"] = 'false'
+        test = False
+
+      if len(tree) > right(rt):
+        if tree[right(rt)] < tree[rt]:
+          step["result"] = 'false'
+          test = False
       response["steps"].append(step)
-      return False
+      if test == False:
+        return test
     
     response["steps"].append(step)
     return is_bst_util(left(rt), mini, tree[rt]) and \
