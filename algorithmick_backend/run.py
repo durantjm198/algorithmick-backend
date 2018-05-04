@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import json
-from .trees import binary_tree_traversal
+from .binary_trees import binary_tree_traversal
+from .binary_trees import is_binary_search_tree
 
 application = Flask(__name__)
 
@@ -21,9 +22,15 @@ def after_request(response):
 def hello():
   return "<h1>KENDRICK DESERVED THE GRAMMY</hi>"
 
-@application.route("/trees/traversal", methods=['POST'])
-def traversal():
+@application.route("/binary_trees/traversal", methods=['POST'])
+def traversal_endpt():
   data = request.get_json()
   order = data['traversal']
   tree = list(map(string_to_int, data['tree']))
   return json.dumps(binary_tree_traversal(tree, order))
+
+@application.route("/binary_trees/is_bst", methods=['POST'])
+def is_bst_endpt():
+  data = request.get_json()
+  tree = list(map(string_to_int, data['tree']))
+  return json.dumps(is_binary_search_tree(tree))
