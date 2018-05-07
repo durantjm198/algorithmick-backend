@@ -11,31 +11,32 @@ def is_binary_search_tree(tree):
   def is_bst_util(rt, mini, maxi):
     step = {'node' : rt}
     
-    if len(tree) <= rt or tree[rt] == None:
-      step['result'] = "true"
+    # check length of tree -- if longer than root, then root is a BST!
+    if len(tree) <= left(rt) or tree[rt] == None:
+      step['result'] = 'true'
       response["steps"].append(step)
       return True
 
     if len(tree) > left(rt):
-      test = True
-
       if tree[left(rt)] > tree[rt]:
-        step["result"] = 'false'
-        test = False
-      if len(tree) > right(rt):
-        if tree[right(rt)] < tree[rt]:
-          step["result"] = 'false'
-          test = False
-      if test == False:
-        response["steps"].append(step)
-        return test
+        step['result'] = 'false'
+        step['reason'] = 'left_child_greater'
+        response['steps'].append(step)
+        return False
+
+    if len(tree) > right(rt):
+      if tree[right(rt)] < tree[rt]:
+        step['result'] = 'false'
+        step['reason'] = 'right_child_less'
+        response['steps'].append(step)
+        return False
     
-    response["steps"].append(step)
     return is_bst_util(left(rt), mini, tree[rt]) and \
       is_bst_util(right(rt), tree[rt], maxi)
 
   response["array"] = tree
   response["result"] = is_bst_util(0, float('-inf'), float('inf'))
+  response["steps"].append({"node": 0, "result": str(response["result"])})
   return response
 
 def binary_tree_traversal(tree, order='preOrder'):

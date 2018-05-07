@@ -1,10 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import json
 from .binary_trees import binary_tree_traversal
 from .binary_trees import is_binary_search_tree
 
 application = Flask(__name__)
 
+# Helper function -- attempts to turn a string into an int, and fails silently
+# if input is invalid.
 def string_to_int(s):
   try:
     return int(s)
@@ -19,8 +21,8 @@ def after_request(response):
   return response
 
 @application.route('/')
-def hello():
-  return "<h1>KENDRICK DESERVED THE GRAMMY</hi>"
+def docs_home():
+  return render_template('docs_home.html')
 
 @application.route("/binary_trees/traversal", methods=['POST'])
 def traversal_endpt():
@@ -34,3 +36,10 @@ def is_bst_endpt():
   data = request.get_json()
   tree = list(map(string_to_int, data['tree']))
   return json.dumps(is_binary_search_tree(tree))
+
+"""@application.route('/binary_trees/binary_search', methods=['POST'])
+def binary_search_endpt():
+  data = request.get_json()
+  tree = list(map(string_to_int, data['tree']))
+  target = string_to_int(data['target'])
+  return json.dumps(is_binary_search_tree(tree))"""
